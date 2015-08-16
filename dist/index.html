@@ -24,12 +24,17 @@
   <script>
     var socket = io();
     $('form').submit(function() {
-      socket.emit('chat message', $('#m').val())
-      $('#m').val('')
+      // socket.emit('chat message', $('#m').val())
+      // $('#m').val('')
+      // return false
+      $.post('/message', {text: $('#m').val(), user: "Anthony"})
+        .done(function(data) {
+          $('#m').val('')
+        })
       return false
     })
-    socket.on('chat message', function(msg) {
-      $('#messages').append($('<li>').text(msg))
+    socket.on('message', function(msgObj) {
+      $('#messages').append($('<li>').text(msgObj.text + ' (' + msgObj.user + ')'))
     })
   </script>
 </html>
