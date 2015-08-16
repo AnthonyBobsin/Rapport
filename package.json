@@ -1,0 +1,8 @@
+{
+  "name": "rapport",
+  "version": "0.0.1",
+  "description": "Elegant meeting assistant.",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
