@@ -1,0 +1,23 @@
+{
+  "name": "Rapport",
+  "version": "0.0.1",
+  "homepage": "https://github.com/AnthonyBobsin/Rapport",
+  "authors": [
+    "AnthonyBobsin <bobsinj@gmail.com>"
+  ],
+  "description": "Elegant meeting assistant.",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.13.3",
+    "jquery": "~2.1.4"
+  }
+}
