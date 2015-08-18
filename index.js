@@ -13,7 +13,6 @@ app.use(bodyParser.urlencoded({
 }))
 app.use(bodyParser.json())
 app.use('/js', express.static(__dirname + '/src/client/js'))
-app.use('/css', express.static(__dirname + '/src/client/css'))
 app.use('/vendor', express.static(__dirname + '/src/vendor'))
 app.use('/build', express.static(__dirname + '/build'))
 
