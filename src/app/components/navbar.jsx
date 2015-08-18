@@ -4,7 +4,7 @@ var Navbar = React.createClass({
   render: function() {
     return (
       <div className="navbar">
-        hello
+        <span className="nav-brand">Rapport</span>
       </div>
       )
   }

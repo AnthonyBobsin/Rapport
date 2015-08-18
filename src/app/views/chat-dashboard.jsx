@@ -5,7 +5,7 @@ var React = require('react')
 var ChatDashboard = React.createClass({
   render: function() {
     return (
-      <div>
+      <div className="chat-dashboard">
         Hello World
       </div>
       )
