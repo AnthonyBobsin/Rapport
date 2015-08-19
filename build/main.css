@@ -1,27 +1,23 @@
-html, body, body > div {
-  margin: 0;
-  width: 100%;
+html, body, #appContent, #appContent > div {
   height: 100%; }
 
-.navbar {
+.rapport-navbar {
   background-color: #16a085;
   height: 50px;
   width: 100%;
-  border-radius: 0;
-  padding: 8px 20px;
-  margin-bottom: 0; }
-  .navbar .nav-brand {
+  padding: 8px 20px; }
+  .rapport-navbar .nav-brand {
     color: white;
     font-size: 21px; }
 
 .chat-dashboard {
   height: calc(100% - 50px);
-  background-color: #ecf0f1;
-  overflow-y: hidden; }
+  background-color: #ecf0f1; }
   .chat-dashboard .topic-sidebar {
     height: 100%;
     display: inline-block;
     background-color: #1abc9c;
+    vertical-align: bottom;
     width: 22%; }
     @media only screen and (max-width: 992px) {
       .chat-dashboard .topic-sidebar {
@@ -29,7 +25,52 @@ html, body, body > div {
   .chat-dashboard .chat-region {
     display: inline-block;
     height: 100%;
+    vertical-align: bottom;
     width: 78%; }
     @media only screen and (max-width: 992px) {
       .chat-dashboard .chat-region {
         width: calc(100% - 350px); } }
+
+.chat-region .message-container {
+  height: 75px;
+  position: absolute;
+  bottom: 0;
+  width: 78%; }
+  @media only screen and (max-width: 992px) {
+    .chat-region .message-container {
+      width: calc(100% - 350px); } }
+  .chat-region .message-container .message-user, .chat-region .message-container .message-input, .chat-region .message-container .message-submit {
+    height: 100%;
+    vertical-align: top; }
+  .chat-region .message-container .message-user {
+    width: 20%;
+    padding: 0px 15px;
+    font-size: 18px; }
+    @media only screen and (max-width: 992px) {
+      .chat-region .message-container .message-user {
+        width: 200px; } }
+  .chat-region .message-container .message-input {
+    width: 70%;
+    padding: 5px 15px;
+    resize: none; }
+    @media only screen and (max-width: 992px) {
+      .chat-region .message-container .message-input {
+        width: calc(100% - 300px); } }
+    .chat-region .message-container .message-input::-webkit-input-placeholder {
+      padding: 20px 15px;
+      font-size: 18px; }
+    .chat-region .message-container .message-input::-moz-placeholder {
+      padding: 20px 15px;
+      font-size: 18px; }
+    .chat-region .message-container .message-input:-ms-input-placeholder {
+      padding: 20px 15px;
+      font-size: 18px; }
+    .chat-region .message-container .message-input::placeholder {
+      padding: 20px 15px;
+      font-size: 18px; }
+  .chat-region .message-container .message-submit {
+    width: 10%;
+    font-size: 18px; }
+    @media only screen and (max-width: 992) {
+      .chat-region .message-container .message-submit {
+        width: 100px; } }

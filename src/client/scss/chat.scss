@@ -4,19 +4,15 @@ $greenSea: #16a085;
 $clouds: #ecf0f1;
 $silver: #bdc3c7;
 
-html, body, body > div {
-  margin: 0;
-  width: 100%;
+html, body, #appContent, #appContent > div {
   height: 100%;
 }
 
-.navbar {
+.rapport-navbar {
   background-color: $greenSea;
   height: 50px;
   width: 100%;
-  border-radius: 0;
   padding: 8px 20px;
-  margin-bottom: 0;
   .nav-brand {
     color: white;
     font-size: 21px;
@@ -26,11 +22,11 @@ html, body, body > div {
 .chat-dashboard {
   height: calc(100% - 50px);
   background-color: $clouds;
-  overflow-y: hidden;
   .topic-sidebar {
     height: 100%;
     display: inline-block;
     background-color: $turquoise;
+    vertical-align: bottom;
     width: 22%;
     @media only screen and (max-width: 992px) {
       width: 350px;
@@ -39,9 +35,51 @@ html, body, body > div {
   .chat-region {
     display: inline-block;
     height: 100%;
+    vertical-align: bottom;
     width: 78%;
     @media only screen and (max-width: 992px) {
       width: calc(100% - 350px);
+    }
+  }
+}
+
+.chat-region .message-container {
+  height: 75px;
+  position: absolute;
+  bottom: 0;
+  width: 78%;
+  @media only screen and (max-width: 992px) {
+    width: calc(100% - 350px);
+  }
+  .message-user, .message-input, .message-submit {
+    height: 100%;
+    vertical-align: top;
+  }
+  .message-user {
+    width: 20%;
+    padding: 0px 15px;
+    font-size: 18px;
+    @media only screen and (max-width: 992px) {
+      width: 200px;
+    }
+  }
+  .message-input {
+    width: 70%;
+    padding: 5px 15px;
+    resize: none;
+    @media only screen and (max-width: 992px) {
+      width: calc(100% - 300px)
+    }
+    &::placeholder {
+      padding: 20px 15px;
+      font-size: 18px;
+    }
+  }
+  .message-submit {
+    width: 10%;
+    font-size: 18px;
+    @media only screen and (max-width: 992) {
+      width: 100px;
     }
   }
 }
