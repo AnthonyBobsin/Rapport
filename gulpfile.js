@@ -27,6 +27,7 @@ gulp.task('browserify', function() {
       console.log('Updated!', (Date.now() - updateStart) + 'ms')
     })
     .bundle() // Create the initial bundle when starting the task
+    .on('error', function(err) { console.log(err) })
     .pipe(source('main.js'))
     .pipe(gulp.dest('./build/'))
 })
