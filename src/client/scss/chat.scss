@@ -1,5 +1,6 @@
 
 $turquoise: #1abc9c;
+$greenSea: #16a085;
 $clouds: #ecf0f1;
 $silver: #bdc3c7;
 
@@ -10,7 +11,7 @@ html, body, body > div {
 }
 
 .navbar {
-  background-color: $turquoise;
+  background-color: $greenSea;
   height: 50px;
   width: 100%;
   border-radius: 0;
@@ -25,4 +26,22 @@ html, body, body > div {
 .chat-dashboard {
   height: calc(100% - 50px);
   background-color: $clouds;
+  overflow-y: hidden;
+  .topic-sidebar {
+    height: 100%;
+    display: inline-block;
+    background-color: $turquoise;
+    width: 22%;
+    @media only screen and (max-width: 992px) {
+      width: 350px;
+    }
+  }
+  .chat-region {
+    display: inline-block;
+    height: 100%;
+    width: 78%;
+    @media only screen and (max-width: 992px) {
+      width: calc(100% - 350px);
+    }
+  }
 }

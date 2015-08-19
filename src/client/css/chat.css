@@ -4,7 +4,7 @@ html, body, body > div {
   height: 100%; }
 
 .navbar {
-  background-color: #1abc9c;
+  background-color: #16a085;
   height: 50px;
   width: 100%;
   border-radius: 0;
@@ -16,4 +16,20 @@ html, body, body > div {
 
 .chat-dashboard {
   height: calc(100% - 50px);
-  background-color: #ecf0f1; }
+  background-color: #ecf0f1;
+  overflow-y: hidden; }
+  .chat-dashboard .topic-sidebar {
+    height: 100%;
+    display: inline-block;
+    background-color: #1abc9c;
+    width: 22%; }
+    @media only screen and (max-width: 992px) {
+      .chat-dashboard .topic-sidebar {
+        width: 350px; } }
+  .chat-dashboard .chat-region {
+    display: inline-block;
+    height: 100%;
+    width: 78%; }
+    @media only screen and (max-width: 992px) {
+      .chat-dashboard .chat-region {
+        width: calc(100% - 350px); } }
