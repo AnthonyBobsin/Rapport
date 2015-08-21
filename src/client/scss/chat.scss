@@ -14,6 +14,7 @@ html, body, #appContent, #appContent > div {
 .navbar {
   .nav-brand {
     font-size: 26px;
+    font-weight: 200;
     color: $clouds;
     margin-left: 20px;
     margin-right: 20px;
@@ -40,7 +41,7 @@ html, body, #appContent, #appContent > div {
     height: 100%;
     vertical-align: bottom;
     width: 78%;
-    box-shadow: -4px 0px 30px 0px rgba(6,36,30,1);
+    box-shadow: -4px 0px 30px 0px rgba(0, 0, 0, 0.4);
     @media only screen and (max-width: 992px) {
       width: calc(100% - 350px);
     }
@@ -50,7 +51,10 @@ html, body, #appContent, #appContent > div {
 .chat-region .messages {
   height: calc(100% - 75px);
   .message {
-    padding: 5px 10px;
+    padding: 10px 20px;
+    &.current-user {
+      text-align: right;
+    }
     &:nth-child(odd) {
       background-color: $cloudsD;
     }
@@ -73,6 +77,7 @@ html, body, #appContent, #appContent > div {
     vertical-align: top;
     border: 1px solid $silver;
     color: $fontBlack;
+    font-weight: 200;
   }
   .message-user {
     width: 20%;
@@ -87,7 +92,6 @@ html, body, #appContent, #appContent > div {
     padding: 5px 15px;
     word-break: break-word;
     font-size: 18px;
-    font-weight: 200;
     @media only screen and (max-width: 992px) {
       width: calc(100% - 300px)
     }

@@ -2,8 +2,12 @@ var React = require('react')
 
 var Message = React.createClass({
   render: function() {
+    var messageClassString = "message"
+    if (this.props.currentUser == this.props.message.user)
+      messageClassString += " current-user"
+
     return (
-      <div className="message">
+      <div className={messageClassString}>
         <span className="message-text">{this.props.message.text}</span>
         <span className="message-user">({this.props.message.user})</span>
       </div>
@@ -45,9 +49,9 @@ var ChatRegion = React.createClass({
   render: function() {
     var messages = this.state.messages.map(function(message, i) {
       return (
-        <Message key={i} message={message} />
+        <Message key={i} currentUser={this.state.user} message={message} />
         )
-    })
+    }, this)
 
     return (
       <div className="chat-region">

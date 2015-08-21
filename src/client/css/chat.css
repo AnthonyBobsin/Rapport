@@ -3,6 +3,7 @@ html, body, #appContent, #appContent > div {
 
 .navbar .nav-brand {
   font-size: 26px;
+  font-weight: 200;
   color: #ecf0f1;
   margin-left: 20px;
   margin-right: 20px;
@@ -26,7 +27,7 @@ html, body, #appContent, #appContent > div {
     height: 100%;
     vertical-align: bottom;
     width: 78%;
-    box-shadow: -4px 0px 30px 0px #06241e; }
+    box-shadow: -4px 0px 30px 0px rgba(0, 0, 0, 0.4); }
     @media only screen and (max-width: 992px) {
       .chat-dashboard .chat-region {
         width: calc(100% - 350px); } }
@@ -34,7 +35,9 @@ html, body, #appContent, #appContent > div {
 .chat-region .messages {
   height: calc(100% - 75px); }
   .chat-region .messages .message {
-    padding: 5px 10px; }
+    padding: 10px 20px; }
+    .chat-region .messages .message.current-user {
+      text-align: right; }
     .chat-region .messages .message:nth-child(odd) {
       background-color: #E3E7E9; }
     .chat-region .messages .message .message-user {
@@ -52,7 +55,8 @@ html, body, #appContent, #appContent > div {
     height: 100%;
     vertical-align: top;
     border: 1px solid #bdc3c7;
-    color: #333; }
+    color: #333;
+    font-weight: 200; }
   .chat-region .new-message-container .message-user {
     width: 20%;
     padding: 0px 15px;
@@ -64,8 +68,7 @@ html, body, #appContent, #appContent > div {
     width: 70%;
     padding: 5px 15px;
     word-break: break-word;
-    font-size: 18px;
-    font-weight: 200; }
+    font-size: 18px; }
     @media only screen and (max-width: 992px) {
       .chat-region .new-message-container .message-input {
         width: calc(100% - 300px); } }
