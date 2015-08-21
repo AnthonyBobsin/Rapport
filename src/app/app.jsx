@@ -5,10 +5,7 @@ var Navbar = require('./components/navbar.jsx')
 var App = React.createClass({
   render: function() {
     return (
-      <div>
-        <Navbar />
-        <ChatDashboard />
-      </div>
+      <ChatDashboard />
     )
   }
 })

@@ -1,17 +1,16 @@
 html, body, #appContent, #appContent > div {
   height: 100%; }
 
-.rapport-navbar {
-  background-color: #2c3e50;
-  height: 50px;
-  width: 100%;
-  padding: 8px 20px; }
-  .rapport-navbar .nav-brand {
-    color: white;
-    font-size: 21px; }
+.navbar .nav-brand {
+  font-size: 26px;
+  color: #ecf0f1;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
+  border-bottom: 3px solid #ecf0f1; }
 
 .chat-dashboard {
-  height: calc(100% - 50px);
+  height: 100%;
   background-color: #ecf0f1; }
   .chat-dashboard .topic-sidebar {
     height: 100%;
@@ -26,7 +25,8 @@ html, body, #appContent, #appContent > div {
     display: inline-block;
     height: 100%;
     vertical-align: bottom;
-    width: 78%; }
+    width: 78%;
+    box-shadow: -4px 0px 30px 0px #06241e; }
     @media only screen and (max-width: 992px) {
       .chat-dashboard .chat-region {
         width: calc(100% - 350px); } }
@@ -80,6 +80,6 @@ html, body, #appContent, #appContent > div {
   .chat-region .new-message-container .message-submit {
     width: 10%;
     font-size: 18px; }
-    @media only screen and (max-width: 992) {
+    @media only screen and (max-width: 992px) {
       .chat-region .new-message-container .message-submit {
         width: 100px; } }
