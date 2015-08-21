@@ -36,7 +36,7 @@ html, body, #appContent, #appContent > div {
   .chat-region .messages .message {
     padding: 5px 10px; }
     .chat-region .messages .message:nth-child(odd) {
-      background-color: #bdc3c7; }
+      background-color: #E3E7E9; }
     .chat-region .messages .message .message-user {
       padding-left: 5px; }
 

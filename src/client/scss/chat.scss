@@ -2,6 +2,7 @@
 $turquoise: #1abc9c;
 $greenSea: #16a085;
 $clouds: #ecf0f1;
+$cloudsD: #E3E7E9;
 $silver: #bdc3c7;
 
 html, body, #appContent, #appContent > div {
@@ -48,7 +49,7 @@ html, body, #appContent, #appContent > div {
   .message {
     padding: 5px 10px;
     &:nth-child(odd) {
-      background-color: $silver;
+      background-color: $cloudsD;
     }
     .message-user {
       padding-left: 5px;
