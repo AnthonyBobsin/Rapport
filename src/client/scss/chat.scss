@@ -43,7 +43,20 @@ html, body, #appContent, #appContent > div {
   }
 }
 
-.chat-region .message-container {
+.chat-region .messages {
+  height: calc(100% - 75px);
+  .message {
+    padding: 5px 10px;
+    &:nth-child(odd) {
+      background-color: $silver;
+    }
+    .message-user {
+      padding-left: 5px;
+    }
+  }
+}
+
+.chat-region .new-message-container {
   height: 75px;
   position: absolute;
   bottom: 0;
