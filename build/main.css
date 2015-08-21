@@ -15,7 +15,7 @@ html, body, #appContent, #appContent > div {
   .chat-dashboard .topic-sidebar {
     height: 100%;
     display: inline-block;
-    background-color: #16a085;
+    background-color: #1abc9c;
     vertical-align: bottom;
     width: 22%; }
     @media only screen and (max-width: 992px) {
@@ -50,7 +50,9 @@ html, body, #appContent, #appContent > div {
       width: calc(100% - 350px); } }
   .chat-region .new-message-container .message-user, .chat-region .new-message-container .message-input, .chat-region .new-message-container .message-submit {
     height: 100%;
-    vertical-align: top; }
+    vertical-align: top;
+    border: 1px solid #bdc3c7;
+    color: #333; }
   .chat-region .new-message-container .message-user {
     width: 20%;
     padding: 0px 15px;
@@ -61,25 +63,20 @@ html, body, #appContent, #appContent > div {
   .chat-region .new-message-container .message-input {
     width: 70%;
     padding: 5px 15px;
-    resize: none; }
+    word-break: break-word;
+    font-size: 18px;
+    font-weight: 200; }
     @media only screen and (max-width: 992px) {
       .chat-region .new-message-container .message-input {
         width: calc(100% - 300px); } }
-    .chat-region .new-message-container .message-input::-webkit-input-placeholder {
-      padding: 20px 15px;
-      font-size: 18px; }
-    .chat-region .new-message-container .message-input::-moz-placeholder {
-      padding: 20px 15px;
-      font-size: 18px; }
-    .chat-region .new-message-container .message-input:-ms-input-placeholder {
-      padding: 20px 15px;
-      font-size: 18px; }
-    .chat-region .new-message-container .message-input::placeholder {
-      padding: 20px 15px;
-      font-size: 18px; }
   .chat-region .new-message-container .message-submit {
     width: 10%;
-    font-size: 18px; }
+    font-size: 18px;
+    color: white;
+    background-color: #1abc9c;
+    border: none; }
+    .chat-region .new-message-container .message-submit:hover {
+      background-color: #16a085; }
     @media only screen and (max-width: 992px) {
       .chat-region .new-message-container .message-submit {
         width: 100px; } }

@@ -5,6 +5,7 @@ $clouds: #ecf0f1;
 $cloudsD: #E3E7E9;
 $silver: #bdc3c7;
 $midnight: #2c3e50;
+$fontBlack: #333;
 
 html, body, #appContent, #appContent > div {
   height: 100%;
@@ -27,7 +28,7 @@ html, body, #appContent, #appContent > div {
   .topic-sidebar {
     height: 100%;
     display: inline-block;
-    background-color: $greenSea;
+    background-color: $turquoise;
     vertical-align: bottom;
     width: 22%;
     @media only screen and (max-width: 992px) {
@@ -70,6 +71,8 @@ html, body, #appContent, #appContent > div {
   .message-user, .message-input, .message-submit {
     height: 100%;
     vertical-align: top;
+    border: 1px solid $silver;
+    color: $fontBlack;
   }
   .message-user {
     width: 20%;
@@ -82,18 +85,22 @@ html, body, #appContent, #appContent > div {
   .message-input {
     width: 70%;
     padding: 5px 15px;
-    resize: none;
+    word-break: break-word;
+    font-size: 18px;
+    font-weight: 200;
     @media only screen and (max-width: 992px) {
       width: calc(100% - 300px)
-    }
-    &::placeholder {
-      padding: 20px 15px;
-      font-size: 18px;
     }
   }
   .message-submit {
     width: 10%;
     font-size: 18px;
+    color: white;
+    background-color: $turquoise;
+    border: none;
+    &:hover {
+      background-color: $greenSea;
+    }
     @media only screen and (max-width: 992px) {
       width: 100px;
     }

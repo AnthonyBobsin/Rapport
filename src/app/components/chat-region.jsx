@@ -54,7 +54,7 @@ var ChatRegion = React.createClass({
         <div className="messages">{messages}</div>
         <form onSubmit={this.sendMessage} className="new-message-container">
           <input type="text" onChange={this.updateUser} value={this.state.user} className="message-user" placeholder="User" />
-          <textarea type="text" onChange={this.updateMessage} value={this.state.message} className="message-input" placeholder="Message"></textarea>
+          <input type="text" onChange={this.updateMessage} value={this.state.message} className="message-input" placeholder="Message" />
           <button type="submit" className="message-submit">Send</button>
         </form>
       </div>
