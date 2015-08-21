@@ -4,13 +4,14 @@ $greenSea: #16a085;
 $clouds: #ecf0f1;
 $cloudsD: #E3E7E9;
 $silver: #bdc3c7;
+$midnight: #2c3e50;
 
 html, body, #appContent, #appContent > div {
   height: 100%;
 }
 
 .rapport-navbar {
-  background-color: $greenSea;
+  background-color: $midnight;
   height: 50px;
   width: 100%;
   padding: 8px 20px;
@@ -26,7 +27,7 @@ html, body, #appContent, #appContent > div {
   .topic-sidebar {
     height: 100%;
     display: inline-block;
-    background-color: $turquoise;
+    background-color: $greenSea;
     vertical-align: bottom;
     width: 22%;
     @media only screen and (max-width: 992px) {
