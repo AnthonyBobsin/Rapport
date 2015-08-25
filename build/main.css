@@ -1,14 +1,15 @@
 html, body, #appContent, #appContent > div {
   height: 100%; }
 
-.navbar .nav-brand {
-  font-size: 26px;
-  font-weight: 200;
-  color: #ecf0f1;
-  margin-left: 20px;
-  margin-right: 20px;
-  padding: 10px;
-  border-bottom: 3px solid #ecf0f1; }
+.navbar {
+  margin-bottom: 0px; }
+  .navbar .nav-brand {
+    font-size: 26px;
+    font-weight: 200;
+    color: #ecf0f1;
+    margin-left: 20px;
+    padding: 10px;
+    border-bottom: 3px solid #ecf0f1; }
 
 .chat-dashboard {
   height: 100%;
@@ -83,3 +84,18 @@ html, body, #appContent, #appContent > div {
     @media only screen and (max-width: 992px) {
       .chat-region .new-message-container .message-submit {
         width: 100px; } }
+
+.topics-container {
+  margin-left: 20px; }
+  .topics-container .topics-header {
+    padding: 15px 0;
+    margin-left: 5px;
+    margin-right: 5px; }
+  .topics-container .topic {
+    padding: 15px 15px;
+    color: #ecf0f1;
+    font-size: 18px;
+    font-weight: 200;
+    cursor: pointer; }
+    .topics-container .topic:hover {
+      background-color: #16a085; }

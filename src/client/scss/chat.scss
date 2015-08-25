@@ -12,12 +12,12 @@ html, body, #appContent, #appContent > div {
 }
 
 .navbar {
+  margin-bottom: 0px;
   .nav-brand {
     font-size: 26px;
     font-weight: 200;
     color: $clouds;
     margin-left: 20px;
-    margin-right: 20px;
     padding: 10px;
     border-bottom: 3px solid $clouds;
   }
@@ -107,6 +107,25 @@ html, body, #appContent, #appContent > div {
     }
     @media only screen and (max-width: 992px) {
       width: 100px;
+    }
+  }
+}
+
+.topics-container {
+  margin-left: 20px;
+  .topics-header {
+    padding: 15px 0;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .topic {
+    padding: 15px 15px;
+    color: $clouds;
+    font-size: 18px;
+    font-weight: 200;
+    cursor: pointer;
+    &:hover {
+      background-color: $greenSea;
     }
   }
 }
