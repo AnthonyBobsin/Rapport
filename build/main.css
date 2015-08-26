@@ -99,10 +99,13 @@ html, body, #appContent, #appContent > div {
   padding: 15px 0;
   margin-left: 5px;
   margin-right: 5px; }
+.topics-container > div:hover {
+  background-color: #17B596; }
 .topics-container .topic-status {
   display: inline-block;
   width: 10px;
-  height: 55px; }
+  height: 55px;
+  vertical-align: top; }
   .topics-container .topic-status.active {
     background-color: #ecf0f1; }
 .topics-container .topic {
@@ -114,5 +117,3 @@ html, body, #appContent, #appContent > div {
   display: inline-block;
   vertical-align: top;
   width: calc(100% - 10px); }
-  .topics-container .topic:hover {
-    background-color: #16a085; }

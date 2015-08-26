@@ -1,5 +1,6 @@
 
 $turquoise: #1abc9c;
+$turquoiseD: #17B596;
 $greenSea: #16a085;
 $clouds: #ecf0f1;
 $cloudsD: #E3E7E9;
@@ -129,10 +130,14 @@ html, body, #appContent, #appContent > div {
     margin-left: 5px;
     margin-right: 5px;
   }
+  > div:hover {
+    background-color: $turquoiseD;
+  }
   .topic-status {
     display: inline-block;
     width: 10px;
     height: 55px;
+    vertical-align: top;
     &.active {
       background-color: $clouds;
     }
@@ -146,8 +151,5 @@ html, body, #appContent, #appContent > div {
     display: inline-block;
     vertical-align: top;
     width: calc(100% - 10px);
-    &:hover {
-      background-color: $greenSea;
-    }
   }
 }
