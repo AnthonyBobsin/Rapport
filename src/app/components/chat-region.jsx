@@ -28,7 +28,8 @@ var ChatRegion = React.createClass({
     var messageObj = {
       topic: this.props.conversation.topic,
       user: this.state.user,
-      text: this.state.message
+      text: this.state.message,
+      cid: this.props.conversation.cid
     }
     var view = this
     $.post('/message', messageObj)

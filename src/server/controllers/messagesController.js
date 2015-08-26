@@ -6,7 +6,8 @@ module.exports.create = function(req, res, io) {
     if (err) console.log(err)
     else {
       console.log("Saved a message")
-      io.emit('message', req.body)
+      // io.emit('message', req.body)
+      io.emit('message', message)
       res.sendStatus(200)
     }
   })

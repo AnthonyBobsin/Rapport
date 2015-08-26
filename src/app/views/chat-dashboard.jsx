@@ -5,13 +5,16 @@ var ChatRegion = require('../components/chat-region.jsx')
 var ChatDashboard = React.createClass({
   getInitialState: function() {
     var conversations = []
+    var conversationIndex = 0
     conversations.push({
       topic: "First Topic",
       isActive: true,
-      messages: []
+      messages: [],
+      cid: conversationIndex
     })
     return {
-      conversations: conversations
+      conversations: conversations,
+      conversationIndex: 0
     }
   },
 
@@ -21,7 +24,7 @@ var ChatDashboard = React.createClass({
 
   _handleMessage: function(messageObj) {
     for (var i = 0; i < this.state.conversations.length; i++) {
-      if (this.state.conversations[i].topic == messageObj.topic) {
+      if (this.state.conversations[i].cid == messageObj.cid) {
         var newConversations = this.state.conversations
         newConversations[i].messages.push({
           text: messageObj.text,
@@ -34,18 +37,23 @@ var ChatDashboard = React.createClass({
 
   _handleAddTopic: function() {
     var newConversations = this.state.conversations
+    var newConversationIndex = this.state.conversationIndex + 1
     newConversations.push({
       topic: "Another Topic",
       isActive: false,
-      messages: []
+      messages: [],
+      cid: newConversationIndex
     })
-    this.setState({conversations: newConversations})
+    this.setState({
+      conversations: newConversations,
+      conversationIndex: newConversationIndex
+    })
   },
 
   _handleSwitchTopic: function(conversation) {
     var newConversations = this.state.conversations
     newConversations.map(function(c) {
-      if (c == conversation) {
+      if (c.cid == conversation.cid) {
         c.isActive = true
       } else c.isActive = false
     }, this)

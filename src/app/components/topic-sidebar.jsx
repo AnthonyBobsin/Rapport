@@ -6,9 +6,15 @@ var Topic = React.createClass({
   },
 
   render: function() {
+    var statusClassString = "topic-status " + (this.props.conversation.isActive ? "active" : "")
+    var topicClassString = "topic " + (this.props.conversation.isActive ? "active" : "")
+
     return (
-      <div onClick={this._handleSwitch} className="topic">
-        {this.props.conversation.topic}
+      <div>
+        <div className={statusClassString}></div>
+        <div onClick={this._handleSwitch} className={topicClassString}>
+          {this.props.conversation.topic}
+        </div>
       </div>
       )
   }

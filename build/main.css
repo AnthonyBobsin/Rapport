@@ -4,10 +4,11 @@ html, body, #appContent, #appContent > div {
 .navbar {
   margin-bottom: 0px; }
   .navbar .nav-brand {
+    margin-left: 20px;
+    margin-right: 60px;
     font-size: 26px;
     font-weight: 200;
     color: #ecf0f1;
-    margin-left: 15px;
     padding: 10px;
     border-bottom: 3px solid #ecf0f1; }
   .navbar .add-topic {
@@ -94,17 +95,24 @@ html, body, #appContent, #appContent > div {
       .chat-region .new-message-container .message-submit {
         width: 100px; } }
 
-.topics-container {
-  margin-left: 15px; }
-  .topics-container .topics-header {
-    padding: 15px 0;
-    margin-left: 5px;
-    margin-right: 5px; }
-  .topics-container .topic {
-    padding: 15px 15px;
-    color: #ecf0f1;
-    font-size: 18px;
-    font-weight: 200;
-    cursor: pointer; }
-    .topics-container .topic:hover {
-      background-color: #16a085; }
+.topics-container .topics-header {
+  padding: 15px 0;
+  margin-left: 5px;
+  margin-right: 5px; }
+.topics-container .topic-status {
+  display: inline-block;
+  width: 10px;
+  height: 55px; }
+  .topics-container .topic-status.active {
+    background-color: #ecf0f1; }
+.topics-container .topic {
+  padding: 15px 15px;
+  color: #ecf0f1;
+  font-size: 18px;
+  font-weight: 200;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  width: calc(100% - 10px); }
+  .topics-container .topic:hover {
+    background-color: #16a085; }
