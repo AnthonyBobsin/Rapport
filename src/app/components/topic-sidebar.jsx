@@ -28,6 +28,7 @@ var Sidebar = React.createClass({
       <div className="topic-sidebar">
         <div className="navbar">
           <div className="nav-brand">Rapport</div>
+          <i className="fa fa-plus-circle"></i>
         </div>
         <div className="topics-container">
           {/* <div className="topics-header">Topics</div> */}

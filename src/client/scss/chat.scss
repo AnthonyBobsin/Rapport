@@ -17,9 +17,20 @@ html, body, #appContent, #appContent > div {
     font-size: 26px;
     font-weight: 200;
     color: $clouds;
-    margin-left: 20px;
+    margin-left: 15px;
     padding: 10px;
     border-bottom: 3px solid $clouds;
+  }
+  .fa-plus-circle {
+    position: absolute;
+    top: 17px;
+    right: 20px;
+    font-size: 25px;
+    color: $clouds;
+    cursor:pointer;
+    &:hover {
+      color: $cloudsD;
+    }
   }
 }
 
@@ -112,7 +123,7 @@ html, body, #appContent, #appContent > div {
 }
 
 .topics-container {
-  margin-left: 20px;
+  margin-left: 15px;
   .topics-header {
     padding: 15px 0;
     margin-left: 5px;

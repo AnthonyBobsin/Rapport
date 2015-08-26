@@ -7,9 +7,18 @@ html, body, #appContent, #appContent > div {
     font-size: 26px;
     font-weight: 200;
     color: #ecf0f1;
-    margin-left: 20px;
+    margin-left: 15px;
     padding: 10px;
     border-bottom: 3px solid #ecf0f1; }
+  .navbar .fa-plus-circle {
+    position: absolute;
+    top: 17px;
+    right: 20px;
+    font-size: 25px;
+    color: #ecf0f1;
+    cursor: pointer; }
+    .navbar .fa-plus-circle:hover {
+      color: #E3E7E9; }
 
 .chat-dashboard {
   height: 100%;
@@ -86,7 +95,7 @@ html, body, #appContent, #appContent > div {
         width: 100px; } }
 
 .topics-container {
-  margin-left: 20px; }
+  margin-left: 15px; }
   .topics-container .topics-header {
     padding: 15px 0;
     margin-left: 5px;
