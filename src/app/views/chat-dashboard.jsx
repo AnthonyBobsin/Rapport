@@ -7,6 +7,7 @@ var ChatDashboard = React.createClass({
     var conversations = []
     conversations.push({
       topic: "First Topic",
+      isActive: true,
       messages: []
     })
     return {
@@ -31,10 +32,28 @@ var ChatDashboard = React.createClass({
     }
   },
 
+  _handleAddTopic: function() {
+    var newConversations = this.state.conversations
+    newConversations.push({
+      topic: "Another Topic",
+      isActive: false,
+      messages: []
+    })
+    this.setState({conversations: newConversations})
+  },
+
+  _handleSwitchTopic: function(conversation) {
+    var newConversations = this.state.conversations
+    newConversations.map(function(c) {
+      if (c == conversation) {
+        c.isActive = true
+      } else c.isActive = false
+    }, this)
+    this.setState({conversations: newConversations})
+  },
+
   render: function() {
-    var topics = []
     var chatRegions = this.state.conversations.map(function(conversation, i) {
-      topics.push(conversation.topic)
       return (
         <ChatRegion key={i} conversation={conversation} />
       )
@@ -42,7 +61,9 @@ var ChatDashboard = React.createClass({
 
     return (
       <div className="chat-dashboard">
-        <TopicSidebar topics={topics} />
+        <TopicSidebar conversations={this.state.conversations}
+          handleSwitch={this._handleSwitchTopic} handleAdd={this._handleAddTopic}
+        />
         {chatRegions}
       </div>
       )

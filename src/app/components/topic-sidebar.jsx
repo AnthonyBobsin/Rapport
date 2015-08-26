@@ -1,9 +1,15 @@
 var React = require('react')
 
 var Topic = React.createClass({
+  _handleSwitch: function() {
+    this.props.handleSwitch(this.props.conversation)
+  },
+
   render: function() {
     return (
-      <div className="topic">{this.props.topic}</div>
+      <div onClick={this._handleSwitch} className="topic">
+        {this.props.conversation.topic}
+      </div>
       )
   }
 })
@@ -18,17 +24,17 @@ var Sidebar = React.createClass({
   },
 
   render: function() {
-    var topics = this.props.topics.map(function(topic, i) {
+    var topics = this.props.conversations.map(function(conversation, i) {
       return (
-        <Topic key={i} topic={topic} />
+        <Topic handleSwitch={this.props.handleSwitch} key={i} conversation={conversation} />
         )
-    })
+    }, this)
 
     return (
       <div className="topic-sidebar">
         <div className="navbar">
           <div className="nav-brand">Rapport</div>
-          <i className="fa fa-plus-circle"></i>
+          <i onClick={this.props.handleAdd} className="fa fa-plus-circle add-topic"></i>
         </div>
         <div className="topics-container">
           {/* <div className="topics-header">Topics</div> */}

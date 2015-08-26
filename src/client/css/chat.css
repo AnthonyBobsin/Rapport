@@ -10,14 +10,14 @@ html, body, #appContent, #appContent > div {
     margin-left: 15px;
     padding: 10px;
     border-bottom: 3px solid #ecf0f1; }
-  .navbar .fa-plus-circle {
+  .navbar .add-topic {
     position: absolute;
     top: 17px;
     right: 20px;
     font-size: 25px;
     color: #ecf0f1;
     cursor: pointer; }
-    .navbar .fa-plus-circle:hover {
+    .navbar .add-topic:hover {
       color: #E3E7E9; }
 
 .chat-dashboard {

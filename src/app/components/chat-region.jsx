@@ -26,7 +26,7 @@ var ChatRegion = React.createClass({
 
   sendMessage: function(e) {
     var messageObj = {
-      topic: "First Topic",
+      topic: this.props.conversation.topic,
       user: this.state.user,
       text: this.state.message
     }
@@ -53,8 +53,10 @@ var ChatRegion = React.createClass({
         )
     }, this)
 
+    var chatRegionClasses = "chat-region " + (this.props.conversation.isActive ? "" : "hide")
+
     return (
-      <div className="chat-region">
+      <div className={chatRegionClasses}>
         <div className="messages">{messages}</div>
         <form onSubmit={this.sendMessage} className="new-message-container">
           <input type="text" onChange={this.updateUser} value={this.state.user} className="message-user" placeholder="User" />
