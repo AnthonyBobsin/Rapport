@@ -27,7 +27,7 @@ html, body, #appContent, #appContent > div {
   .chat-dashboard .topic-sidebar {
     height: 100%;
     display: inline-block;
-    background-color: #1abc9c;
+    background-color: #1BA39C;
     vertical-align: bottom;
     width: 22%; }
     @media only screen and (max-width: 992px) {
@@ -87,10 +87,10 @@ html, body, #appContent, #appContent > div {
     width: 10%;
     font-size: 18px;
     color: white;
-    background-color: #1abc9c;
+    background-color: #1BA39C;
     border: none; }
     .chat-region .new-message-container .message-submit:hover {
-      background-color: #17B596; }
+      background-color: #65C6BB; }
     @media only screen and (max-width: 992px) {
       .chat-region .new-message-container .message-submit {
         width: 100px; } }
@@ -103,17 +103,17 @@ html, body, #appContent, #appContent > div {
   position: relative;
   cursor: pointer; }
   .topics-container .topic-container.active {
-    background: linear-gradient(to right, #16a085, transparent);
+    background: linear-gradient(to right, #65C6BB, transparent);
     cursor: default; }
   .topics-container .topic-container:hover {
-    background: linear-gradient(to right, #16a085, transparent); }
+    background: linear-gradient(to right, #65C6BB, transparent); }
 .topics-container .topic-status {
   display: inline-block;
   width: 10px;
   height: 55px;
   vertical-align: top; }
   .topics-container .topic-status.active {
-    background-color: #49E5EC; }
+    background-color: #86E2D5; }
 .topics-container .topic {
   padding: 15px 15px;
   color: #ecf0f1;

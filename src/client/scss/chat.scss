@@ -1,13 +1,13 @@
 
-$turquoise: #1abc9c;
-$turquoiseD: #17B596;
-$greenSea: #16a085;
+$riptide: #86E2D5;
+$turquoise: #4ECDC4;
+$turquoiseD: #65C6BB;
+$greenSea: #1BA39C;
 $clouds: #ecf0f1;
 $cloudsD: #DCE0E2;
 $silver: #bdc3c7;
 $midnight: #2c3e50;
 $fontBlack: #333;
-$skyBlue: #49E5EC;
 
 html, body, #appContent, #appContent > div {
   height: 100%;
@@ -43,7 +43,7 @@ html, body, #appContent, #appContent > div {
   .topic-sidebar {
     height: 100%;
     display: inline-block;
-    background-color: $turquoise;
+    background-color: $greenSea;
     vertical-align: bottom;
     width: 22%;
     @media only screen and (max-width: 992px) {
@@ -114,7 +114,7 @@ html, body, #appContent, #appContent > div {
     width: 10%;
     font-size: 18px;
     color: white;
-    background-color: $turquoise;
+    background-color: $greenSea;
     border: none;
     &:hover {
       background-color: $turquoiseD;
@@ -135,11 +135,11 @@ html, body, #appContent, #appContent > div {
     position: relative;
     cursor: pointer;
     &.active {
-      background: linear-gradient(to right, $greenSea,  rgba(0, 0, 0, 0));
+      background: linear-gradient(to right, $turquoiseD,  rgba(0, 0, 0, 0));
       cursor: default;
     }
     &:hover {
-      background: linear-gradient(to right, $greenSea,  rgba(0, 0, 0, 0));
+      background: linear-gradient(to right, $turquoiseD,  rgba(0, 0, 0, 0));
     }
   }
   .topic-status {
@@ -148,7 +148,7 @@ html, body, #appContent, #appContent > div {
     height: 55px;
     vertical-align: top;
     &.active {
-      background-color: $skyBlue;
+      background-color: $riptide;
     }
   }
   .topic {
