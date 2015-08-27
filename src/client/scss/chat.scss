@@ -3,10 +3,11 @@ $turquoise: #1abc9c;
 $turquoiseD: #17B596;
 $greenSea: #16a085;
 $clouds: #ecf0f1;
-$cloudsD: #E3E7E9;
+$cloudsD: #DCE0E2;
 $silver: #bdc3c7;
 $midnight: #2c3e50;
 $fontBlack: #333;
+$skyBlue: #49E5EC;
 
 html, body, #appContent, #appContent > div {
   height: 100%;
@@ -116,7 +117,7 @@ html, body, #appContent, #appContent > div {
     background-color: $turquoise;
     border: none;
     &:hover {
-      background-color: $greenSea;
+      background-color: $turquoiseD;
     }
     @media only screen and (max-width: 992px) {
       width: 100px;
@@ -130,8 +131,16 @@ html, body, #appContent, #appContent > div {
     margin-left: 5px;
     margin-right: 5px;
   }
-  > div:hover {
-    background-color: $turquoiseD;
+  .topic-container {
+    position: relative;
+    cursor: pointer;
+    &.active {
+      background: linear-gradient(to right, $greenSea,  rgba(0, 0, 0, 0));
+      cursor: default;
+    }
+    &:hover {
+      background: linear-gradient(to right, $greenSea,  rgba(0, 0, 0, 0));
+    }
   }
   .topic-status {
     display: inline-block;
@@ -139,7 +148,7 @@ html, body, #appContent, #appContent > div {
     height: 55px;
     vertical-align: top;
     &.active {
-      background-color: $clouds;
+      background-color: $skyBlue;
     }
   }
   .topic {
@@ -147,9 +156,19 @@ html, body, #appContent, #appContent > div {
     color: $clouds;
     font-size: 18px;
     font-weight: 200;
-    cursor: pointer;
     display: inline-block;
     vertical-align: top;
     width: calc(100% - 10px);
+  }
+  .fa-pencil {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 20px;
+    color: $clouds;
+    cursor: pointer;
+    &:hover {
+      color: $cloudsD;
+    }
   }
 }

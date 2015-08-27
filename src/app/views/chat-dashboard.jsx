@@ -50,13 +50,22 @@ var ChatDashboard = React.createClass({
     })
   },
 
-  _handleSwitchTopic: function(conversation) {
+  _handleSwitchTopic: function(conversationID) {
     var newConversations = this.state.conversations
-    newConversations.map(function(c) {
-      if (c.cid == conversation.cid) {
-        c.isActive = true
-      } else c.isActive = false
-    }, this)
+    for (var i = 0; i < newConversations.length; i++) {
+      if (newConversations[i].cid == conversationID) {
+        newConversations[i].isActive = true
+      } else newConversations[i].isActive = false
+    }
+    this.setState({conversations: newConversations})
+  },
+
+  _handleRenameTopic: function(conversationID, title) {
+    var newConversations = this.state.conversations
+    for (var i = 0; i < newConversations.length; i++) {
+      if (newConversations[i].cid == conversationID)
+        newConversations[i].topic = title
+    }
     this.setState({conversations: newConversations})
   },
 
@@ -70,7 +79,9 @@ var ChatDashboard = React.createClass({
     return (
       <div className="chat-dashboard">
         <TopicSidebar conversations={this.state.conversations}
-          handleSwitch={this._handleSwitchTopic} handleAdd={this._handleAddTopic}
+          handleSwitch={this._handleSwitchTopic}
+          handleAdd={this._handleAddTopic}
+          handleRename={this._handleRenameTopic}
         />
         {chatRegions}
       </div>

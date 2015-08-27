@@ -19,7 +19,7 @@ html, body, #appContent, #appContent > div {
     color: #ecf0f1;
     cursor: pointer; }
     .navbar .add-topic:hover {
-      color: #E3E7E9; }
+      color: #DCE0E2; }
 
 .chat-dashboard {
   height: 100%;
@@ -50,7 +50,7 @@ html, body, #appContent, #appContent > div {
     .chat-region .messages .message.current-user {
       text-align: right; }
     .chat-region .messages .message:nth-child(odd) {
-      background-color: #E3E7E9; }
+      background-color: #DCE0E2; }
     .chat-region .messages .message .message-user {
       padding-left: 5px; }
 
@@ -90,7 +90,7 @@ html, body, #appContent, #appContent > div {
     background-color: #1abc9c;
     border: none; }
     .chat-region .new-message-container .message-submit:hover {
-      background-color: #16a085; }
+      background-color: #17B596; }
     @media only screen and (max-width: 992px) {
       .chat-region .new-message-container .message-submit {
         width: 100px; } }
@@ -99,21 +99,35 @@ html, body, #appContent, #appContent > div {
   padding: 15px 0;
   margin-left: 5px;
   margin-right: 5px; }
-.topics-container > div:hover {
-  background-color: #17B596; }
+.topics-container .topic-container {
+  position: relative;
+  cursor: pointer; }
+  .topics-container .topic-container.active {
+    background: linear-gradient(to right, #16a085, transparent);
+    cursor: default; }
+  .topics-container .topic-container:hover {
+    background: linear-gradient(to right, #16a085, transparent); }
 .topics-container .topic-status {
   display: inline-block;
   width: 10px;
   height: 55px;
   vertical-align: top; }
   .topics-container .topic-status.active {
-    background-color: #ecf0f1; }
+    background-color: #49E5EC; }
 .topics-container .topic {
   padding: 15px 15px;
   color: #ecf0f1;
   font-size: 18px;
   font-weight: 200;
-  cursor: pointer;
   display: inline-block;
   vertical-align: top;
   width: calc(100% - 10px); }
+.topics-container .fa-pencil {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 20px;
+  color: #ecf0f1;
+  cursor: pointer; }
+  .topics-container .fa-pencil:hover {
+    color: #DCE0E2; }
