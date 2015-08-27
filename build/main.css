@@ -115,13 +115,24 @@ html, body, #appContent, #appContent > div {
   .topics-container .topic-status.active {
     background-color: #86E2D5; }
 .topics-container .topic {
-  padding: 15px 15px;
   color: #ecf0f1;
   font-size: 18px;
   font-weight: 200;
   display: inline-block;
-  vertical-align: top;
-  width: calc(100% - 10px); }
+  vertical-align: top; }
+.topics-container div.topic {
+  padding: 15px 15px;
+  width: calc(100% - 70px);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden; }
+.topics-container input.topic {
+  width: calc(100% - 85px);
+  margin: 12px;
+  background-color: transparent;
+  border: 2px solid #ecf0f1; }
+  .topics-container input.topic:focus {
+    outline: none; }
 .topics-container .fa-pencil {
   position: absolute;
   top: 15px;

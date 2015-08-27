@@ -1,8 +1,8 @@
 
-$riptide: #86E2D5;
-$turquoise: #4ECDC4;
-$turquoiseD: #65C6BB;
-$greenSea: #1BA39C;
+$riptide: #86E2D5; // Riptide
+$turquoise: #4ECDC4; // Medium Turquoise
+$turquoiseD: #65C6BB; // Downy
+$greenSea: #1BA39C; // Light Sea Green
 $clouds: #ecf0f1;
 $cloudsD: #DCE0E2;
 $silver: #bdc3c7;
@@ -152,13 +152,27 @@ html, body, #appContent, #appContent > div {
     }
   }
   .topic {
-    padding: 15px 15px;
     color: $clouds;
     font-size: 18px;
     font-weight: 200;
     display: inline-block;
     vertical-align: top;
-    width: calc(100% - 10px);
+  }
+  div.topic {
+    padding: 15px 15px;
+    width: calc(100% - 70px);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow-x: hidden;
+  }
+  input.topic {
+    width: calc(100% - 85px);
+    margin: 12px;
+    background-color: transparent;
+    border: 2px solid $clouds;
+    &:focus {
+      outline: none;
+    }
   }
   .fa-pencil {
     position: absolute;
