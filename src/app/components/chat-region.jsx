@@ -2,14 +2,18 @@ var React = require('react')
 
 var Message = React.createClass({
   render: function() {
-    var messageClassString = "message"
-    if (this.props.currentUser == this.props.message.user)
-      messageClassString += " current-user"
+    var messageClass = "message"
+    var messageUserClass = "message-user"
+    if (this.props.currentUser == this.props.message.user){
+      messageClass += " current-user"
+      messageUserClass += " hide"
+    }
+
 
     return (
-      <div className={messageClassString}>
+      <div className={messageClass}>
         <span className="message-text">{this.props.message.text}</span>
-        <span className="message-user">({this.props.message.user})</span>
+        <span className={messageUserClass}>({this.props.message.user})</span>
       </div>
       )
   }
