@@ -11,7 +11,7 @@ var Topic = React.createClass({
     if (this.state.isEditing) $('input.topic').focus()
   },
 
-  _handleSwitch: function(e) {
+  handleSwitch: function(e) {
     e.stopPropagation()
     this.props.handleSwitch(this.props.conversation.cid)
   },
@@ -42,7 +42,7 @@ var Topic = React.createClass({
     return (
       <div className={containerDivClassString}>
         <div className={statusClassString}></div>
-        <div onClick={this._handleSwitch} className={topicTextClassString}>
+        <div onClick={this.handleSwitch} className={topicTextClassString}>
           {this.props.conversation.topic}
         </div>
         <input type="text" onBlur={this.triggerRename} onKeyPress={this.checkForEnter}

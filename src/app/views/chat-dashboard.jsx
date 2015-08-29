@@ -19,10 +19,10 @@ var ChatDashboard = React.createClass({
   },
 
   componentDidMount: function() {
-    socket.on('message', this._handleMessage)
+    socket.on('message', this.handleMessage)
   },
 
-  _handleMessage: function(messageObj) {
+  handleMessage: function(messageObj) {
     for (var i = 0; i < this.state.conversations.length; i++) {
       if (this.state.conversations[i].cid == messageObj.cid) {
         var newConversations = this.state.conversations
@@ -35,7 +35,7 @@ var ChatDashboard = React.createClass({
     }
   },
 
-  _handleAddTopic: function() {
+  handleAddTopic: function() {
     var newConversations = this.state.conversations
     var newConversationIndex = this.state.conversationIndex + 1
     newConversations.push({
@@ -50,7 +50,7 @@ var ChatDashboard = React.createClass({
     })
   },
 
-  _handleSwitchTopic: function(conversationID) {
+  handleSwitchTopic: function(conversationID) {
     var newConversations = this.state.conversations
     for (var i = 0; i < newConversations.length; i++) {
       if (newConversations[i].cid == conversationID) {
@@ -60,7 +60,7 @@ var ChatDashboard = React.createClass({
     this.setState({conversations: newConversations})
   },
 
-  _handleRenameTopic: function(conversationID, title) {
+  handleRenameTopic: function(conversationID, title) {
     var newConversations = this.state.conversations
     for (var i = 0; i < newConversations.length; i++) {
       if (newConversations[i].cid == conversationID)
@@ -79,9 +79,9 @@ var ChatDashboard = React.createClass({
     return (
       <div className="chat-dashboard">
         <TopicSidebar conversations={this.state.conversations}
-          handleSwitch={this._handleSwitchTopic}
-          handleAdd={this._handleAddTopic}
-          handleRename={this._handleRenameTopic}
+          handleSwitch={this.handleSwitchTopic}
+          handleAdd={this.handleAddTopic}
+          handleRename={this.handleRenameTopic}
         />
         {chatRegions}
       </div>
