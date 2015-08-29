@@ -37,6 +37,10 @@ var ChatDashboard = React.createClass({
     return -1
   },
 
+  scrollToBottomOfMessages: function() {
+    $('.chat-region.active > .messages').scrollTop($('.chat-region.active > .messages')[0].scrollHeight)
+  },
+
   handleMessage: function(messageObj) {
     index = this.indexOfActiveConversation(messageObj.cid)
     if (index != -1) {
@@ -46,9 +50,13 @@ var ChatDashboard = React.createClass({
         user: messageObj.user
       })
       this.setState({conversations: newConversations})
-      // TODO: Add a check to see if user has not scrolled up
+
+      // Check to see if user is close to bottom, if not don't scroll
       var activeMessagesRegion = $('.chat-region.active > .messages')
-      activeMessagesRegion.animate({scrollTop: activeMessagesRegion[0].scrollHeight}, 'fast')
+      var heightToBottomOfRegion = activeMessagesRegion[0].scrollHeight - (activeMessagesRegion[0].scrollTop + activeMessagesRegion.height())
+
+      if (heightToBottomOfRegion < 100)
+        this.scrollToBottomOfMessages()
     }
   },
 
@@ -75,6 +83,7 @@ var ChatDashboard = React.createClass({
       } else newConversations[i].isActive = false
     }
     this.setState({conversations: newConversations})
+    this.scrollToBottomOfMessages()
   },
 
   handleRenameTopic: function(conversationID, title) {
