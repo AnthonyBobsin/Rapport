@@ -3,8 +3,7 @@ var React = require('react')
 var Topic = React.createClass({
   getInitialState: function() {
     return {
-      isEditing: false,
-      topic: this.props.conversation.topic
+      isEditing: false
     }
   },
 
@@ -17,26 +16,20 @@ var Topic = React.createClass({
     this.props.handleSwitch(this.props.conversation.cid)
   },
 
-  triggerRename: function() {
-    this.props.handleRename(this.props.conversation.cid, this.state.topic)
+  triggerRename: function(e) {
+    e.stopPropagation()
+    this.setState({isEditing: false})
+    this.props.handleRename(this.props.conversation.cid, e.target.value)
   },
 
   startEditing: function(e) {
     this.setState({isEditing: true})
   },
 
-  stopEditing: function(e) {
-    this.setState({isEditing: false})
-    this.triggerRename()
-  },
-
   checkForEnter: function(e) {
+    e.stopPropagation()
     var keyCode = e.keyCode || e.which
-    if (keyCode == 13) this.stopEditing()
-  },
-
-  updateTopic: function(e) {
-    this.setState({topic: e.target.value})
+    if (keyCode == 13) this.triggerRename(e)
   },
 
   render: function() {
@@ -50,10 +43,10 @@ var Topic = React.createClass({
       <div className={containerDivClassString}>
         <div className={statusClassString}></div>
         <div onClick={this._handleSwitch} className={topicTextClassString}>
-          {this.state.topic}
+          {this.props.conversation.topic}
         </div>
-        <input type="text" onChange={this.updateTopic} onBlur={this.stopEditing} onKeyPress={this.checkForEnter}
-          value={this.state.topic} className={topicInputClassString} />
+        <input type="text" onBlur={this.triggerRename} onKeyPress={this.checkForEnter}
+          defaultValue={this.props.conversation.topic} className={topicInputClassString} />
         <i onClick={this.startEditing} className={editTopicClassString}></i>
       </div>
       )
