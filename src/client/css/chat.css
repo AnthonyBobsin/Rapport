@@ -33,18 +33,21 @@ html, body, #appContent, #appContent > div {
     @media only screen and (max-width: 992px) {
       .chat-dashboard .topic-sidebar {
         width: 350px; } }
-  .chat-dashboard .chat-region {
+  .chat-dashboard .chats-container {
+    box-shadow: -4px 0px 30px 0px rgba(0, 0, 0, 0.4);
     display: inline-block;
-    height: 100%;
     vertical-align: bottom;
-    width: 78%;
-    box-shadow: -4px 0px 30px 0px rgba(0, 0, 0, 0.4); }
+    height: 100%;
+    width: 78%; }
     @media only screen and (max-width: 992px) {
-      .chat-dashboard .chat-region {
+      .chat-dashboard .chats-container {
         width: calc(100% - 350px); } }
+  .chat-dashboard .chat-region {
+    height: 100%; }
 
 .chat-region .messages {
-  height: calc(100% - 75px); }
+  height: calc(100% - 75px);
+  overflow-y: scroll; }
   .chat-region .messages .message {
     padding: 10px 20px; }
     .chat-region .messages .message.current-user {
@@ -90,7 +93,7 @@ html, body, #appContent, #appContent > div {
     background-color: #1BA39C;
     border: none; }
     .chat-region .new-message-container .message-submit:hover {
-      background-color: #65C6BB; }
+      background-color: #32ACA6; }
     @media only screen and (max-width: 992px) {
       .chat-region .new-message-container .message-submit {
         width: 100px; } }

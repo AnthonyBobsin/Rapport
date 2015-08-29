@@ -33,21 +33,21 @@ var Topic = React.createClass({
   },
 
   render: function() {
-    var containerDivClassString = "topic-container " + (this.props.conversation.isActive ? "active" : "")
-    var statusClassString = "topic-status " + (this.props.conversation.isActive ? "active" : "")
-    var topicTextClassString = "topic " + (this.state.isEditing ? "hide" : "")
-    var topicInputClassString = "topic " + (this.state.isEditing ? "" : "hide")
-    var editTopicClassString = "fa fa-pencil " + (this.props.conversation.isActive ? "" : "hide")
+    var containerDivClass = "topic-container " + (this.props.conversation.isActive ? "active" : "")
+    var statusClass = "topic-status " + (this.props.conversation.isActive ? "active" : "")
+    var topicTextClass = "topic " + (this.state.isEditing ? "hide" : "")
+    var topicInputClass = "topic " + (this.state.isEditing ? "" : "hide")
+    var editTopicClass = "fa fa-pencil " + (this.props.conversation.isActive ? "" : "hide")
 
     return (
-      <div className={containerDivClassString}>
-        <div className={statusClassString}></div>
-        <div onClick={this.handleSwitch} className={topicTextClassString}>
+      <div className={containerDivClass}>
+        <div className={statusClass}></div>
+        <div onClick={this.handleSwitch} className={topicTextClass}>
           {this.props.conversation.topic}
         </div>
         <input type="text" onBlur={this.triggerRename} onKeyPress={this.checkForEnter}
-          defaultValue={this.props.conversation.topic} className={topicInputClassString} />
-        <i onClick={this.startEditing} className={editTopicClassString}></i>
+          defaultValue={this.props.conversation.topic} className={topicInputClass} />
+        <i onClick={this.startEditing} className={editTopicClass}></i>
       </div>
       )
   }

@@ -25,18 +25,20 @@ var ChatRegion = React.createClass({
   },
 
   sendMessage: function(e) {
-    var messageObj = {
-      topic: this.props.conversation.topic,
-      user: this.state.user,
-      text: this.state.message,
-      cid: this.props.conversation.cid
-    }
-    var view = this
-    $.post('/message', messageObj)
-      .done(function(data) {
-        view.setState({message: ''})
-      })
     e.preventDefault()
+    if (this.state.message && this.state.user) {
+      var messageObj = {
+        topic: this.props.conversation.topic,
+        user: this.state.user,
+        text: this.state.message,
+        cid: this.props.conversation.cid
+      }
+      var view = this
+      $.post('/message', messageObj)
+        .done(function(data) {
+          view.setState({message: ''})
+        })
+    }
   },
 
   updateUser: function(e) {
@@ -54,10 +56,10 @@ var ChatRegion = React.createClass({
         )
     }, this)
 
-    var chatRegionClasses = "chat-region " + (this.props.conversation.isActive ? "" : "hide")
+    var chatRegionClass = "chat-region " + (this.props.conversation.isActive ? "active" : "hide")
 
     return (
-      <div className={chatRegionClasses}>
+      <div className={chatRegionClass}>
         <div className="messages">{messages}</div>
         <form onSubmit={this.sendMessage} className="new-message-container">
           <input type="text" onChange={this.updateUser} value={this.state.user} className="message-user" placeholder="User" />

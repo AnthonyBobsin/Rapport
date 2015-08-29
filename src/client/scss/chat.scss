@@ -3,6 +3,7 @@ $riptide: #86E2D5; // Riptide
 $turquoise: #4ECDC4; // Medium Turquoise
 $turquoiseD: #65C6BB; // Downy
 $greenSea: #1BA39C; // Light Sea Green
+$greenSeaL: #32ACA6;
 $clouds: #ecf0f1;
 $cloudsD: #DCE0E2;
 $silver: #bdc3c7;
@@ -50,20 +51,24 @@ html, body, #appContent, #appContent > div {
       width: 350px;
     }
   }
-  .chat-region {
-    display: inline-block;
-    height: 100%;
-    vertical-align: bottom;
-    width: 78%;
+  .chats-container {
     box-shadow: -4px 0px 30px 0px rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    vertical-align: bottom;
+    height: 100%;
+    width: 78%;
     @media only screen and (max-width: 992px) {
       width: calc(100% - 350px);
     }
+  }
+  .chat-region {
+    height: 100%;
   }
 }
 
 .chat-region .messages {
   height: calc(100% - 75px);
+  overflow-y: scroll;
   .message {
     padding: 10px 20px;
     &.current-user {
@@ -117,7 +122,7 @@ html, body, #appContent, #appContent > div {
     background-color: $greenSea;
     border: none;
     &:hover {
-      background-color: $turquoiseD;
+      background-color: $greenSeaL;
     }
     @media only screen and (max-width: 992px) {
       width: 100px;
