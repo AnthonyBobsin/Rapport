@@ -11,25 +11,25 @@ var Topic = React.createClass({
     if (this.state.isEditing) $('input.topic').focus()
   },
 
-  handleSwitch: function(e) {
+  _handleSwitch: function(e) {
     e.stopPropagation()
     this.props.handleSwitch(this.props.conversation.cid)
   },
 
-  triggerRename: function(e) {
+  _triggerRename: function(e) {
     e.stopPropagation()
     this.setState({isEditing: false})
     this.props.handleRename(this.props.conversation.cid, e.target.value)
   },
 
-  startEditing: function(e) {
+  _startEditing: function(e) {
     this.setState({isEditing: true})
   },
 
-  checkForEnter: function(e) {
+  _checkForEnter: function(e) {
     e.stopPropagation()
     var keyCode = e.keyCode || e.which
-    if (keyCode == 13) this.triggerRename(e)
+    if (keyCode == 13) this._triggerRename(e)
   },
 
   render: function() {
@@ -42,12 +42,12 @@ var Topic = React.createClass({
     return (
       <div className={containerDivClass}>
         <div className={statusClass}></div>
-        <div onClick={this.handleSwitch} className={topicTextClass}>
+        <div onClick={this._handleSwitch} className={topicTextClass}>
           {this.props.conversation.topic}
         </div>
-        <input type="text" onBlur={this.triggerRename} onKeyPress={this.checkForEnter}
+        <input type="text" onBlur={this._triggerRename} onKeyPress={this._checkForEnter}
           defaultValue={this.props.conversation.topic} className={topicInputClass} />
-        <i onClick={this.startEditing} className={editTopicClass}></i>
+        <i onClick={this._startEditing} className={editTopicClass}></i>
       </div>
       )
   }

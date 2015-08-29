@@ -28,7 +28,7 @@ var ChatRegion = React.createClass({
     }
   },
 
-  sendMessage: function(e) {
+  _sendMessage: function(e) {
     e.preventDefault()
     if (this.state.message && this.state.user) {
       var messageObj = {
@@ -45,11 +45,11 @@ var ChatRegion = React.createClass({
     }
   },
 
-  updateUser: function(e) {
+  _updateUser: function(e) {
     this.setState({user: e.target.value})
   },
 
-  updateMessage: function(e) {
+  _updateMessage: function(e) {
     this.setState({message: e.target.value})
   },
 
@@ -65,9 +65,9 @@ var ChatRegion = React.createClass({
     return (
       <div className={chatRegionClass}>
         <div className="messages">{messages}</div>
-        <form onSubmit={this.sendMessage} className="new-message-container">
-          <input type="text" onChange={this.updateUser} value={this.state.user} className="message-user" placeholder="User" />
-          <input type="text" onChange={this.updateMessage} value={this.state.message} className="message-input" placeholder="Message" />
+        <form onSubmit={this._sendMessage} className="new-message-container">
+          <input type="text" onChange={this._updateUser} value={this.state.user} className="message-user" placeholder="User" />
+          <input type="text" onChange={this._updateMessage} value={this.state.message} className="message-input" placeholder="Message" />
           <button type="submit" className="message-submit">Send</button>
         </form>
       </div>

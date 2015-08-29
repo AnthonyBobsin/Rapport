@@ -19,10 +19,10 @@ var ChatDashboard = React.createClass({
   },
 
   componentDidMount: function() {
-    socket.on('message', this.handleMessage)
+    socket.on('message', this._handleMessage)
   },
 
-  indexOfConversation: function(cid) {
+  _indexOfConversation: function(cid) {
     for (var i = 0; i < this.state.conversations.length; i++) {
       if (this.state.conversations[i].cid == cid)
         return i
@@ -30,19 +30,19 @@ var ChatDashboard = React.createClass({
     return -1
   },
 
-  indexOfActiveConversation: function(cid) {
+  _indexOfActiveConversation: function(cid) {
     for (var i = 0; i < this.state.conversations.length; i++) {
       if (this.state.conversations[i].isActive) return i
     }
     return -1
   },
 
-  scrollToBottomOfMessages: function() {
+  _scrollToBottomOfMessages: function() {
     $('.chat-region.active > .messages').scrollTop($('.chat-region.active > .messages')[0].scrollHeight)
   },
 
-  handleMessage: function(messageObj) {
-    index = this.indexOfActiveConversation(messageObj.cid)
+  _handleMessage: function(messageObj) {
+    index = this._indexOfActiveConversation(messageObj.cid)
     if (index != -1) {
       var newConversations = this.state.conversations
       newConversations[index].messages.push({
@@ -56,11 +56,11 @@ var ChatDashboard = React.createClass({
       var heightToBottomOfRegion = activeMessagesRegion[0].scrollHeight - (activeMessagesRegion[0].scrollTop + activeMessagesRegion.height())
 
       if (heightToBottomOfRegion < 100)
-        this.scrollToBottomOfMessages()
+        this._scrollToBottomOfMessages()
     }
   },
 
-  handleAddTopic: function() {
+  _handleAddTopic: function() {
     var newConversations = this.state.conversations
     var currentIndex = this.state.conversationIndex
     newConversations.push({
@@ -75,7 +75,7 @@ var ChatDashboard = React.createClass({
     })
   },
 
-  handleSwitchTopic: function(conversationID) {
+  _handleSwitchTopic: function(conversationID) {
     var newConversations = this.state.conversations
     for (var i = 0; i < newConversations.length; i++) {
       if (newConversations[i].cid == conversationID) {
@@ -83,11 +83,11 @@ var ChatDashboard = React.createClass({
       } else newConversations[i].isActive = false
     }
     this.setState({conversations: newConversations})
-    this.scrollToBottomOfMessages()
+    this._scrollToBottomOfMessages()
   },
 
-  handleRenameTopic: function(conversationID, title) {
-    var index = this.indexOfConversation(conversationID)
+  _handleRenameTopic: function(conversationID, title) {
+    var index = this._indexOfConversation(conversationID)
     if (index != -1) {
       var newConversations = this.state.conversations
       newConversations[index].topic = title
@@ -105,9 +105,9 @@ var ChatDashboard = React.createClass({
     return (
       <div className="chat-dashboard">
         <TopicSidebar conversations={this.state.conversations}
-          handleSwitch={this.handleSwitchTopic}
-          handleAdd={this.handleAddTopic}
-          handleRename={this.handleRenameTopic}
+          handleSwitch={this._handleSwitchTopic}
+          handleAdd={this._handleAddTopic}
+          handleRename={this._handleRenameTopic}
         />
         <div className="chats-container">{chatRegions}</div>
       </div>
