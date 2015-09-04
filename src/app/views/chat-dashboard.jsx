@@ -96,20 +96,19 @@ var ChatDashboard = React.createClass({
   },
 
   render: function() {
-    var chatRegions = this.state.conversations.map(function(conversation, i) {
-      return (
-        <ChatRegion key={i} conversation={conversation} />
-      )
-    })
-
     return (
       <div className="chat-dashboard">
-        <TopicSidebar conversations={this.state.conversations}
+        <TopicSidebar
+          conversations={this.state.conversations}
           handleSwitch={this._handleSwitchTopic}
           handleAdd={this._handleAddTopic}
           handleRename={this._handleRenameTopic}
-        />
-        <div className="chats-container">{chatRegions}</div>
+          />
+        <div className="chats-container">
+          {this.state.conversations.map(function(conversation, i) {
+            return <ChatRegion key={i} conversation={conversation} />
+          }, this)}
+        </div>
       </div>
       )
   }

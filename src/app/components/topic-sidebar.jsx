@@ -41,13 +41,18 @@ var Topic = React.createClass({
 
     return (
       <div className={containerDivClass}>
-        <div className={statusClass}></div>
+        <div className={statusClass} />
         <div onClick={this._handleSwitch} className={topicTextClass}>
           {this.props.conversation.topic}
         </div>
-        <input type="text" onBlur={this._triggerRename} onKeyPress={this._checkForEnter}
-          defaultValue={this.props.conversation.topic} className={topicInputClass} />
-        <i onClick={this._startEditing} className={editTopicClass}></i>
+        <input
+          type="text"
+          onBlur={this._triggerRename}
+          onKeyPress={this._checkForEnter}
+          defaultValue={this.props.conversation.topic}
+          className={topicInputClass}
+          />
+        <i onClick={this._startEditing} className={editTopicClass} />
       </div>
       )
   }
@@ -55,23 +60,20 @@ var Topic = React.createClass({
 
 var Sidebar = React.createClass({
   render: function() {
-    var topics = this.props.conversations.map(function(conversation, i) {
-      return (
-        <Topic handleSwitch={this.props.handleSwitch}
-          handleRename={this.props.handleRename}
-          key={i} conversation={conversation} />
-        )
-    }, this)
-
     return (
       <div className="topic-sidebar">
         <div className="navbar">
           <div className="nav-brand">Rapport</div>
-          <i onClick={this.props.handleAdd} className="fa fa-plus-circle add-topic"></i>
+          <i onClick={this.props.handleAdd} className="fa fa-plus-circle add-topic" />
         </div>
         <div className="topics-container">
-          {/* <div className="topics-header">Topics</div> */}
-          {topics}
+          {this.props.conversations.map(function(conversation, i) {
+            return <Topic
+              handleSwitch={this.props.handleSwitch}
+              handleRename={this.props.handleRename}
+              key={i} conversation={conversation}
+              />
+          }, this)}
         </div>
       </div>
       )
