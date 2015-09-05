@@ -20,6 +20,6 @@
     "watchify": "^3.3.1"
   },
   "scripts": {
-    "start": "{ gulp & node index.js & }"
+    "start": "gulp & node index.js &"
   }
 }

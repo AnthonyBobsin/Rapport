@@ -22,7 +22,7 @@ var Message = React.createClass({
 var ChatRegion = React.createClass({
   getInitialState: function() {
     return {
-      messages: this.props.conversation.messages,
+      messages: this.props.topic.messages,
       user: '',
       message: ''
     }
@@ -32,10 +32,10 @@ var ChatRegion = React.createClass({
     e.preventDefault()
     if (this.state.message && this.state.user) {
       var messageObj = {
-        topic: this.props.conversation.topic,
+        topic: this.props.topic.title,
         user: this.state.user,
         text: this.state.message,
-        cid: this.props.conversation.cid
+        tid: this.props.topic.tid
       }
       var view = this
       $.post('/message', messageObj)
@@ -54,7 +54,7 @@ var ChatRegion = React.createClass({
   },
 
   render: function() {
-    var chatRegionClass = "chat-region " + (this.props.conversation.isActive ? "active" : "hide")
+    var chatRegionClass = "chat-region " + (this.props.topic.isActive ? "active" : "hide")
 
     return (
       <div className={chatRegionClass}>

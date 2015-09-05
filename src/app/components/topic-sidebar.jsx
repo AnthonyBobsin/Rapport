@@ -13,13 +13,13 @@ var Topic = React.createClass({
 
   _handleSwitch: function(e) {
     e.stopPropagation()
-    this.props.handleSwitch(this.props.conversation.cid)
+    this.props.handleSwitch(this.props.topic.tid)
   },
 
   _triggerRename: function(e) {
     e.stopPropagation()
     this.setState({isEditing: false})
-    this.props.handleRename(this.props.conversation.cid, e.target.value)
+    this.props.handleRename(this.props.topic.tid, e.target.value)
   },
 
   _startEditing: function(e) {
@@ -33,23 +33,23 @@ var Topic = React.createClass({
   },
 
   render: function() {
-    var containerDivClass = "topic-container " + (this.props.conversation.isActive ? "active" : "")
-    var statusClass = "topic-status " + (this.props.conversation.isActive ? "active" : "")
+    var containerDivClass = "topic-container " + (this.props.topic.isActive ? "active" : "")
+    var statusClass = "topic-status " + (this.props.topic.isActive ? "active" : "")
     var topicTextClass = "topic " + (this.state.isEditing ? "hide" : "")
     var topicInputClass = "topic " + (this.state.isEditing ? "" : "hide")
-    var editTopicClass = "fa fa-pencil " + (this.props.conversation.isActive ? "" : "hide")
+    var editTopicClass = "fa fa-pencil " + (this.props.topic.isActive ? "" : "hide")
 
     return (
       <div className={containerDivClass}>
         <div className={statusClass} />
         <div onClick={this._handleSwitch} className={topicTextClass}>
-          {this.props.conversation.topic}
+          {this.props.topic.title}
         </div>
         <input
           type="text"
           onBlur={this._triggerRename}
           onKeyPress={this._checkForEnter}
-          defaultValue={this.props.conversation.topic}
+          defaultValue={this.props.topic.title}
           className={topicInputClass}
           />
         <i onClick={this._startEditing} className={editTopicClass} />
@@ -67,11 +67,11 @@ var Sidebar = React.createClass({
           <i onClick={this.props.handleAdd} className="fa fa-plus-circle add-topic" />
         </div>
         <div className="topics-container">
-          {this.props.conversations.map(function(conversation, i) {
+          {this.props.topics.map(function(topic, i) {
             return <Topic
               handleSwitch={this.props.handleSwitch}
               handleRename={this.props.handleRename}
-              key={i} conversation={conversation}
+              key={i} topic={topic}
               />
           }, this)}
         </div>
