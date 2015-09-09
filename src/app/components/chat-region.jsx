@@ -38,7 +38,7 @@ var ChatRegion = React.createClass({
         tid: this.props.topic.tid
       }
       var view = this
-      $.post('/message', messageObj)
+      $.post('/messages', messageObj)
         .done(function(data) {
           view.setState({message: ''})
         })

@@ -1,14 +1,17 @@
 var Message = require(__dirname + '/../models/message')
 
-module.exports.create = function(req, res, io) {
-  var message = new Message(req.body)
-  message.save(function(err) {
-    if (err) console.log(err)
-    else {
-      console.log("Saved a message")
-      // io.emit('message', req.body)
-      io.emit('message', message)
-      res.sendStatus(200)
-    }
-  })
+var MessagesController = {
+  create: function(req, res, io) {
+    var message = new Message(req.body)
+    message.save(function(err) {
+      if (err) console.log(err)
+      else {
+        console.log("Saved a message")
+        io.emit('message', message)
+        res.sendStatus(200)
+      }
+    })
+  }
 }
+
+module.exports = MessagesController

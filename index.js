@@ -4,6 +4,8 @@ var http = require('http').Server(app)
 var io = require('socket.io')(http)
 var bodyParser = require('body-parser')
 var mongoose = require('mongoose')
+var meetingsController = require(__dirname + '/src/server/controllers/meetingsController')
+var conversationsController = require(__dirname + '/src/server/controllers/conversationsController')
 var messagesController = require(__dirname + '/src/server/controllers/messagesController')
 
 // SETUP
@@ -21,11 +23,18 @@ app.get('/', function(req, res) {
   res.sendFile(__dirname + '/src/client/index.html')
 })
 
-app.post('/message', function(req, res) {
+// REST
+app.post('/meetings', function(req, res) {
+  meetingsController.create(req, res, io)
+})
+app.post('/conversations', function(req, res) {
+  conversationsController.create(req, res, io)
+})
+app.post('/messages', function(req, res) {
   messagesController.create(req, res, io)
 })
 
-
+// Start server
 http.listen(3000, function() {
   console.log('I\'m listening on *:3000')
 })
