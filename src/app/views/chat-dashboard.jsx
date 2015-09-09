@@ -18,6 +18,12 @@ var ChatDashboard = React.createClass({
     }
   },
 
+  componentWillMount: function() {
+    // Todo: Open up a modal that handles meeting management.
+    // Modal will show all current meetings that you can join,
+    // and will give the option to create your own new meeting.
+  },
+
   componentDidMount: function() {
     socket.on('message', this._handleMessage)
   },
