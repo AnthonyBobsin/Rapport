@@ -24,12 +24,17 @@ app.get('/', function(req, res) {
 })
 
 // REST
+// Meetings resource
+app.get('/meetings', function(req, res) {
+})
 app.post('/meetings', function(req, res) {
   meetingsController.create(req, res, io)
 })
+// Conversations resource
 app.post('/conversations', function(req, res) {
   conversationsController.create(req, res, io)
 })
+// Messages resource
 app.post('/messages', function(req, res) {
   messagesController.create(req, res, io)
 })

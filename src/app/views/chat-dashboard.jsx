@@ -1,6 +1,7 @@
 var React = require('react')
 var TopicSidebar = require('../components/topic-sidebar.jsx')
 var ChatRegion = require('../components/chat-region.jsx')
+var Modal = require ('../components/modal.jsx')
 
 var ChatDashboard = React.createClass({
   getInitialState: function() {
@@ -22,6 +23,10 @@ var ChatDashboard = React.createClass({
     // Todo: Open up a modal that handles meeting management.
     // Modal will show all current meetings that you can join,
     // and will give the option to create your own new meeting.
+    // $.get('/meetings')
+    //   .done(function(data) {
+    //     debugger
+    //   })
   },
 
   componentDidMount: function() {
@@ -102,7 +107,10 @@ var ChatDashboard = React.createClass({
   },
 
   render: function() {
-    return (
+    // If no meeting is set, render meeting modal picker...
+    // else load dashboard
+    if (this.state.meeting) {
+      return (
       <div className="chat-dashboard">
         <TopicSidebar
           topics={this.state.topics}
@@ -117,6 +125,9 @@ var ChatDashboard = React.createClass({
         </div>
       </div>
       )
+    } else { // No meeting is loaded, so load meeting modal picker
+      return <Modal />
+    }
   }
 })
 
