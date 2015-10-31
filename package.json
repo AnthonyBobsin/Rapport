@@ -1,0 +1,24 @@
+{
+  "name": "rapport",
+  "version": "0.0.1",
+  "description": "Elegant meeting assistant.",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "browserify": "^11.0.1",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-ruby-sass": "^1.1.0",
+    "mongoose": "^4.1.3",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3",
+    "reactify": "^1.1.1",
+    "socket.io": "^1.3.6",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.3.1"
+  },
+  "scripts": {
+    "start": "gulp & node index.js &"
+  }
+}
